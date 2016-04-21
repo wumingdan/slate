@@ -1,13 +1,12 @@
 ---
-title: API Reference
+title: hm-charts API Reference
 
 language_tabs:
-  - shell
-  - ruby
-  - python
+  - javascript
+  - html
+  - css
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -18,97 +17,106 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+[hm-charts](https://github.com/wumingdan/hm-charts) 是一个基于修改版 [Raphael](http://dmitrybaranovskiy.github.io/raphael/) 的 SVG/VML 绘图库。
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+兼容所有高级浏览器，以及 IE6+，如有发现兼容性问题随时联系 [wumingdan](baidu://message/?id=wumingdan2011) 修复。
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+以下是相关 API 接口以及代码示例。
 
-# Authentication
+# APIs
 
-> To authorize, use this code:
+## Namespace
 
-```ruby
-require 'kittn'
+[hm-charts](https://github.com/wumingdan/hm-charts) 在 [webpack](https://webpack.github.io/) 构建之后生成一个全局变量名为 `hmcharts`
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+`hmcharts` 对象提供了所有已支持图像的原型对象，当你需要使用特定图像时作为参数传入 `hmcharts.create` 方法，所有目前已支持的列表如下
+
+Name | Type | Description
+--------- | ------- | -----------
+create | Function | 创建所有图像都通过此接口
+bubble | Object | 气泡图
+flow | Object | 上下游图
+heatMap | Object | 点击图（待完善）
+maps | Object | 地图合集，可选中国和世界 {china: Object, world: Object}
+pie | Object | 饼图
+radar | Object | 雷达图
+series | Object | 线图/柱状图/面积图/上述3种任意混合图
+stackBar | Object | 堆积图
+
+## Line
+
+```javascript
+var lineData = {
+    containerId: 'lineContainer',
+    xAxis: [
+        {
+            type: 'category',
+            data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value',
+        }
+    ],
+    series: [
+        {
+            name: '新访客',
+            yAxis: 1,
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+        },
+        {
+            name: '旧访客',
+            yAxis: 1,
+            data: [217.0, 316.9, 419.5, 714.5, 218.2, 321.5, 1115.2, 726.5, 323.3, 418.3, 313.9, 519.6]
+        },
+        {
+            name: 'any访客',
+            yAxis: 1,
+            data: [27.0, 36.9, 41.5, 74.5, 18.2, 32.5, 115.2, 422.5, 123.3, 818.3, 130.9, 19.6]
+        }
+    ],
+    legend: {
+        position: 'top-right'
+    }
+};
+
+// 初始化图形
+var lineChart = hmcharts.create(hmcharts.series, lineData)
 ```
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
+```html
+<div id="lineContainer" class="chart"></div>
 ```
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+```css
+.chart {
+    width: 80%;
+    height: 400px;
+}
+
+.hm-axis {
+    // ...
+}
+
+.hm-serie {
+    // ...
+}
+
+.hm-grid {
+    // ...
+}
+
+// ...
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+创建一个折线图
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+### Interface
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+`var lineChart = hmcharts.create(hmcharts.series, lineData)`
 
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
+### Parameter
 
 Parameter | Default | Description
 --------- | ------- | -----------
@@ -119,23 +127,23 @@ available | true | If set to false, the result will include kittens that have al
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific Kitten
+## Bar
 
-```ruby
+```javscript
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
 api.kittens.get(2)
 ```
 
-```python
+```html
 import kittn
 
 api = kittn.authorize('meowmeowmeow')
 api.kittens.get(2)
 ```
 
-```shell
+```css
 curl "http://example.com/api/kittens/2"
   -H "Authorization: meowmeowmeow"
 ```
@@ -166,3 +174,14 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to retrieve
 
+## Area
+
+## StackBar
+
+## Pie
+
+## Radar
+
+## Bubble
+
+## Maps
