@@ -498,7 +498,7 @@ var pieChart = hmcharts.create(hmcharts.pie, pieData);
 // ...
 ```
 
-创建一个堆积图
+创建一个饼图
 
 ### Interface
 
@@ -606,11 +606,11 @@ var radarChart = hmcharts.create(hmcharts.radar, radarData);
 // ...
 ```
 
-创建一个堆积图
+创建一个雷达图
 
 ### Interface
 
-`var pieChart = hmcharts.create(hmcharts.pie, pieData)`
+`var radarChart = hmcharts.create(hmcharts.radar, radarData)`
 
 ### Parameter
 
