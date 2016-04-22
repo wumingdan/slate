@@ -202,7 +202,7 @@ var barChart = hmcharts.create(hmcharts.series, barData)
 // ...
 ```
 
-创建一个折线图
+创建一个柱状图
 
 ### Interface
 
@@ -296,11 +296,11 @@ var areaChart = hmcharts.create(hmcharts.series, areaData)
 // ...
 ```
 
-创建一个折线图
+创建一个面积图
 
 ### Interface
 
-`var barChart = hmcharts.create(hmcharts.series, areaData)`
+`var stackChart = hmcharts.create(hmcharts.series, stackData)`
 
 ### Parameter
 
@@ -413,7 +413,7 @@ var stackChart = hmcharts.create(hmcharts.stackBar, stackData);
 // ...
 ```
 
-创建一个折线图
+创建一个堆积图
 
 ### Interface
 

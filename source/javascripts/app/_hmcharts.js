@@ -583,7 +583,7 @@ var hmcharts =
 
 	            var f = function () { };
 
-	            var propObject = Util.extend(ChartBase, prop)
+	            var propObject = Util.extend(Util.cloneObject(ChartBase), prop)
 
 	            f.prototype = propObject;
 
