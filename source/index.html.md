@@ -438,7 +438,195 @@ TODO — 待补充全右侧全部接口极其相关注释
 
 ## Pie
 
+```javascript
+var pieData = {
+    containerId: 'pieContainer',
+    plotOptions: {
+        pie: {
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                showLabelNumber: 5,
+                color: '#000',
+                connectorColor: '#000'
+            },
+            animate: false,
+            showInLegend: true,
+            margin: [80, 50, 50, 50]
+        }
+    },
+    series: [{
+        name: '浏览器品牌',
+        type: 'pie',
+        data: [
+            { name: 'Microsoft Internet Explorer', value: 11156.33 },
+            { name: 'Chrome', value: 11124.03 },
+            { name: 'Firefox', value: 11110.38 },
+            { name: 'Safari', value: 1114.77 },
+            { name: 'Opera', value: 111.91 },
+            { name: 'Proprietary or Undetectable', value: 111.2 }
+        ]
+    }]
+};
+
+// 初始化图形
+var pieChart = hmcharts.create(hmcharts.pie, pieData);
+```
+
+```html
+<div id="pieContainer" class="chart"></div>
+```
+
+```css
+.chart {
+    width: 80%;
+    height: 400px;
+}
+
+.hm-axis {
+    // ...
+}
+
+.hm-serie {
+    // ...
+}
+
+.hm-grid {
+    // ...
+}
+
+// ...
+```
+
+创建一个堆积图
+
+### Interface
+
+`var pieChart = hmcharts.create(hmcharts.pie, pieData)`
+
+### Parameter
+
+Parameter | Type | Description
+--------- | ------- | -----------
+prototype | Object | 需要绘制的图像原型，必选，例如 hmcharts.series / hmcharts.pie
+settingData | Object | 基本同折线图，通过 type 参数指定 series 类型为 stack-bar，再通过 stack 指定分组信息
+
+
+### Sample
+
+<p id="pieContainer" class="chart pie-chart">hi</p>
+
+<aside class="warning">
+TODO — 待补充全右侧全部接口极其相关注释
+</aside>
+
 ## Radar
+
+
+```javascript
+var radarData = {
+    containerId: 'radarContainer',
+    xAxis: {
+        data: ['销售', '市场', '研发', '客服', '信息技术', '社交', '售后', '折旧']
+    },
+    yAxis: {
+    },
+    grid: {
+        type: 'polygon',
+        split: 3
+    },
+    plotOptions: {
+        radar: {
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                showLabelNumber: 5,
+                color: '#000',
+                connectorColor: '#000'
+            },
+            animate: false,
+            showInLegend: true,
+            radius: 180,
+            margin: [80, 50, 50, 110]
+        }
+    },
+    series: [
+        {
+            name: '预算分配',
+            type: 'line',   // bar, line, area
+            data: [43000, 19000, 60000, 35000, 17000, 10000, 21000, 31000],
+            tooltip: {
+                valueSuffix: ' 元'
+            }
+        },
+        {
+            name: '实际开销',
+            data: [50000, 39000, 42000, 31000, 26000, 14000, 26000, 39000],
+            tooltip: {
+                valueSuffix: ' 元'
+            }
+        },
+        {
+            name: '预算&实际差额',
+            type: 'line',   // bar, line, area
+            data: [7000, 20000, 18000, 4000, 9000, 4000, 5000, 8000],
+            tooltip: {
+                valueSuffix: ' 元'
+            }
+        }
+    ]
+};
+
+// 初始化图形
+var radarChart = hmcharts.create(hmcharts.radar, radarData);
+```
+
+```html
+<div id="radarContainer" class="chart"></div>
+```
+
+```css
+.chart {
+    width: 80%;
+    height: 400px;
+}
+
+.hm-axis {
+    // ...
+}
+
+.hm-serie {
+    // ...
+}
+
+.hm-grid {
+    // ...
+}
+
+// ...
+```
+
+创建一个堆积图
+
+### Interface
+
+`var pieChart = hmcharts.create(hmcharts.pie, pieData)`
+
+### Parameter
+
+Parameter | Type | Description
+--------- | ------- | -----------
+prototype | Object | 需要绘制的图像原型，必选，例如 hmcharts.series / hmcharts.pie
+settingData | Object | 基本同折线图，通过 type 参数指定 series 类型为 stack-bar，再通过 stack 指定分组信息
+
+
+### Sample
+
+<p id="radarContainer" class="chart pie-chart">hi</p>
+
+<aside class="warning">
+TODO — 待补充全右侧全部接口极其相关注释
+</aside>
 
 ## Bubble
 

@@ -2731,10 +2731,10 @@ var hmcharts =
 	            mapColors: ['#1556a1', '#136bd4', '#6c98d5', '#9fccff', '#dcecff'],
 
 	            // 饼图颜色配置
-	            pieColors: ['#2DA8E3', '#BCEC6D', '#EA498A', '#FF524F', '#EAE96B', '#75CF48', '#FCBC2A', '#FD5F34', '#7ECAEF', '#999999'],
+	            pieColors: ['#4fa8f9', '#6ec71e', '#f56e6a', '#fc8b40', '#818af8', '#31c9d7', '#f35e7a','#ab7aee', '#14d68b', '#edb00d'],
 
 	            // 雷达图颜色配置
-	            radarColors: ['#2DA8E3', '#EA498A', '#FF524F', '#BCEC6D', '#EAE96B', '#75CF48', '#FCBC2A', '#FD5F34', '#7ECAEF', '#999999']
+	            radarColors: ['#4fa8f9', '#6ec71e', '#f56e6a', '#fc8b40', '#818af8', '#31c9d7', '#f35e7a','#ab7aee', '#14d68b', '#edb00d']
 	        },
 
 	        fontInfo: {
@@ -5558,6 +5558,7 @@ var hmcharts =
 	    var dataAdapter = __webpack_require__(17);
 
 	    var Animate = __webpack_require__(19);
+	    var Resources = __webpack_require__(10);
 
 	    var Raphael = __webpack_require__(3);
 
@@ -5572,7 +5573,7 @@ var hmcharts =
 	            },
 	            hasBarSeries: true,
 	            // 线条颜色
-	            color: ['#00acec', '#75cf48', '#fcbc2a', '#516e95', '#2ba362','#e9a840','#bbb','#9457e6', '#a8c656'],
+	            color: Resources.colorInfo.colors,
 	            itemStyle: {
 	                normal: {
 	                    lineStyle: {
