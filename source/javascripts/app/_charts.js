@@ -40,7 +40,7 @@ var initLineChartDemo = function () {
     };
 
     // 初始化图形
-    var lineChart = hmcharts.create(hmcharts.series, lineData);
+    window.lineChart = hmcharts.create(hmcharts.series, lineData);
 };
 
 var initBarChartDemo = function () {
@@ -86,7 +86,7 @@ var initBarChartDemo = function () {
     };
 
     // 初始化图形
-    var barChart = hmcharts.create(hmcharts.series, barData);
+    window.barChart = hmcharts.create(hmcharts.series, barData);
 };
 
 var initAreaChartDemo = function () {
@@ -134,7 +134,7 @@ var initAreaChartDemo = function () {
     };
 
     // 初始化图形
-    var areaChart = hmcharts.create(hmcharts.series, areaData);
+    window.areaChart = hmcharts.create(hmcharts.series, areaData);
 };
 
 var initStackBarChartDemo = function () {
@@ -202,7 +202,7 @@ var initStackBarChartDemo = function () {
     };
 
     // 初始化图形
-    var stackChart = hmcharts.create(hmcharts.stackBar, stackData);
+    window.stackChart = hmcharts.create(hmcharts.stackBar, stackData);
 };
 
 $(document).ready(function () {
@@ -217,6 +217,6 @@ $(document).ready(function () {
     
     // 堆积图
     setTimeout(function () {
-        initStackBarChartDemo();
+        // initStackBarChartDemo();
     }, 500);
 });
