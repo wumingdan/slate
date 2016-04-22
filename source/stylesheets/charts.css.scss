@@ -1,0 +1,11 @@
+@charset "utf-8";
+@import 'normalize';
+@import 'variables';
+@import 'icon-font';
+
+$chart-bg: #fff;
+
+.chart {
+    background-color: $chart-bg;
+    height: 350px;
+}
