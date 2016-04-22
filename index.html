@@ -88,6 +88,7 @@
     </style>
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+    <link href="stylesheets/charts.css" rel="stylesheet" />
       <script src="javascripts/all.js"></script>
   </head>
 
@@ -260,24 +261,28 @@
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>prototype</td>
+<td>Object</td>
+<td>需要绘制的图像原型，必选，例如 hmcharts.series / hmcharts.pie</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>settingData</td>
+<td>Object</td>
+<td>图形数据，具体参照右侧代码示例</td>
 </tr>
 </tbody></table>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+<h3 id="sample">Sample</h3>
+
+<p id="lineContainer" class="chart">hi</p>
+
+<aside class="warning">
+TODO — 待补充全右侧全部接口极其相关注释
 </aside>
 
 <h2 id="bar">Bar</h2>
