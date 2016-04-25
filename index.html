@@ -867,24 +867,170 @@ TODO — 待补充全右侧全部接口极其相关注释
 <td>number对应数据传入时的顺序，可单独定义某条数据展示线的样式</td>
 </tr>
 <tr>
-<td>hm-series-are</td>
+<td>hm-series-area</td>
 <td>面积图面积部分的单独样式</td>
 </tr>
 <tr>
-<td>hm-series-are-{number}</td>
+<td>hm-series-area-{number}</td>
 <td>同样 number 对应数据传入的顺序，可单独定义某个面积展现的样式</td>
 </tr>
 <tr>
 <td>hm-grid-mask</td>
 <td>整体图形覆盖层，用于事件监听，默认无样式，也不建议修改其样式</td>
 </tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
-</tr>
 </tbody></table>
 
 <h2 id="settings">Settings</h2>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">settingData</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">containerId</span><span class="p">:</span> <span class="s1">'lineContainer'</span><span class="p">,</span>
+    <span class="na">xAxis</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="na">type</span><span class="p">:</span> <span class="s1">'category'</span><span class="p">,</span>           <span class="c1">// 轴类型，可选 category/value</span>
+            <span class="na">position</span><span class="p">:</span> <span class="s1">'bottom'</span><span class="p">,</span>         <span class="c1">// 轴位置，可选 top/right/bottom/left</span>
+            <span class="na">axisTick</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">show</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>             <span class="c1">// 是否展示 axis tick</span>
+                <span class="na">inside</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>          <span class="c1">// 往坐标系内部绘制还是往外绘制</span>
+                <span class="na">length</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>              <span class="c1">// tick 长度</span>
+                <span class="na">lineStyle</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">color</span><span class="p">:</span> <span class="s1">'#dedede'</span><span class="p">,</span>   <span class="c1">// tick 颜色</span>
+                    <span class="na">width</span><span class="p">:</span> <span class="mi">1</span>            <span class="c1">// tick 宽度</span>
+                <span class="p">}</span>
+                <span class="nl">interval</span><span class="p">:</span> <span class="mi">0</span>             <span class="c1">// 坐标轴 tick 显示规则，可定义间隔多少显示一个 tick</span>
+            <span class="p">},</span>
+            <span class="na">axisLine</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">show</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>             <span class="c1">// 是否展示 axis line</span>
+                <span class="na">style</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">width</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>           <span class="c1">// axis line 线条宽度</span>
+                    <span class="na">color</span><span class="p">:</span> <span class="s1">'#dedede'</span>    <span class="c1">// axis line 线条颜色</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="na">axisLabel</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">show</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>             <span class="c1">// 是否展示</span>
+                <span class="na">margin</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>             <span class="c1">// 坐标轴文本标签与坐标轴的间距</span>
+                <span class="na">maxLength</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>          <span class="c1">// 最多显示多少位，超出截断</span>
+                <span class="na">rotate</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>             <span class="c1">// 可定义该 axis 文字的旋转样式</span>
+                <span class="na">textStyle</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">color</span><span class="p">:</span> <span class="s1">'#5b5d61'</span><span class="p">,</span>   <span class="c1">// axis label color 设置</span>
+                    <span class="na">align</span><span class="p">:</span> <span class="s1">'center'</span><span class="p">,</span>    <span class="c1">// axis label 对齐方式，可选为：left/right/center</span>
+                    <span class="na">fontFamily</span><span class="p">:</span> <span class="nx">Resource</span><span class="p">.</span><span class="nx">fontInfo</span><span class="p">.</span><span class="nx">family</span><span class="p">,</span>       <span class="c1">// axisLabel 字体类型</span>
+                    <span class="na">fontSize</span><span class="p">:</span> <span class="nx">Resource</span><span class="p">.</span><span class="nx">fontInfo</span><span class="p">.</span><span class="nx">fontSizeSmall</span><span class="p">,</span>  <span class="c1">// axisLabel 字体大小</span>
+                    <span class="na">fontStyle</span><span class="p">:</span> <span class="s1">'normal'</span><span class="p">,</span>                        <span class="c1">// 样式，可选为：normal/italic</span>
+                    <span class="na">fontWeight</span><span class="p">:</span> <span class="s1">'normal'</span>                        <span class="c1">// 粗细，可选为：normal/bold </span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Jan'</span><span class="p">,</span> <span class="s1">'Feb'</span><span class="p">,</span> <span class="s1">'Mar'</span><span class="p">,</span> <span class="s1">'Apr'</span><span class="p">,</span> <span class="s1">'May'</span><span class="p">,</span> <span class="s1">'Jun'</span><span class="p">,</span> <span class="s1">'Jul'</span><span class="p">,</span> <span class="s1">'Aug'</span><span class="p">,</span> <span class="s1">'Sep'</span><span class="p">,</span> <span class="s1">'Oct'</span><span class="p">,</span> <span class="s1">'Nov'</span><span class="p">,</span> <span class="s1">'Dec'</span><span class="p">]</span>  <span class="c1">// 类目数据</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="na">yAxis</span><span class="p">:</span> <span class="p">[</span>                            <span class="c1">// 基本参照 xAixs</span>
+        <span class="p">{</span>
+            <span class="na">type</span><span class="p">:</span> <span class="s1">'value'</span><span class="p">,</span>              <span class="c1">// 轴类型，可选 category/value</span>
+            <span class="na">position</span><span class="p">:</span> <span class="s1">'left'</span><span class="p">,</span>           <span class="c1">// 轴位置，可选 top/right/bottom/left</span>
+            <span class="na">axisTick</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">show</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="na">interval</span><span class="p">:</span> <span class="s1">'auto'</span><span class="p">,</span>
+                <span class="na">inside</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="na">length</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="na">lineStyle</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">color</span><span class="p">:</span> <span class="s1">'#dedede'</span><span class="p">,</span>
+                    <span class="na">width</span><span class="p">:</span> <span class="mi">1</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="na">axisLine</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">show</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>             <span class="c1">// 是否展示 axis line</span>
+                <span class="na">style</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">width</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>           <span class="c1">// axis line 线条宽度</span>
+                    <span class="na">color</span><span class="p">:</span> <span class="s1">'#e6e9ed'</span>    <span class="c1">// axis line 线条颜色</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="na">axisLabel</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">format</span><span class="p">:</span> <span class="s1">'{value}'</span><span class="p">,</span>
+                <span class="na">show</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="na">interval</span><span class="p">:</span> <span class="s1">'auto'</span><span class="p">,</span>
+                <span class="na">rotate</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="na">margin</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                <span class="na">maxLength</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+                <span class="na">shareSuffix</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="na">textStyle</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">color</span><span class="p">:</span> <span class="s1">'#787a7d'</span><span class="p">,</span>
+                    <span class="na">align</span><span class="p">:</span> <span class="s1">'center'</span><span class="p">,</span>
+                    <span class="na">fontFamily</span><span class="p">:</span> <span class="nx">Resource</span><span class="p">.</span><span class="nx">fontInfo</span><span class="p">.</span><span class="nx">family</span><span class="p">,</span>
+                    <span class="na">fontSize</span><span class="p">:</span> <span class="nx">Resource</span><span class="p">.</span><span class="nx">fontInfo</span><span class="p">.</span><span class="nx">fontSizeSmall</span><span class="p">,</span>
+                    <span class="na">fontStyle</span><span class="p">:</span> <span class="s1">'normal'</span><span class="p">,</span>
+                    <span class="na">fontWeight</span><span class="p">:</span> <span class="s1">'normal'</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="na">split</span><span class="p">:</span> <span class="mi">5</span>                    <span class="c1">// 纵轴分隔数目</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="na">series</span><span class="p">:</span> <span class="p">[</span>                           <span class="c1">// 数据</span>
+        <span class="p">{</span>
+            <span class="na">name</span><span class="p">:</span> <span class="s1">'三星'</span><span class="p">,</span>                <span class="c1">// 数据名称，例如`新房客`，`访问时长`，`降水量`等</span>
+            <span class="na">yAxis</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>                   <span class="c1">// 如果有多条 y 轴时对应到哪条轴，只有一条数据轴时为 1</span>
+            <span class="na">type</span><span class="p">:</span> <span class="s1">'stack-bar'</span><span class="p">,</span>          <span class="c1">// 数据展示类型，可选为 line/bar/area/stack-bar</span>
+            <span class="na">stack</span><span class="p">:</span> <span class="s1">'安卓'</span><span class="p">,</span>               <span class="c1">// 当 type 为 stack-bar 时可选该参数，可定义此条数据的分组类型</span>
+            <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="mf">49.9</span><span class="p">,</span> <span class="mf">71.5</span><span class="p">,</span> <span class="mf">106.4</span><span class="p">,</span> <span class="mf">129.2</span><span class="p">,</span> <span class="mf">144.0</span><span class="p">,</span> <span class="mf">176.0</span><span class="p">,</span> <span class="mf">135.6</span><span class="p">,</span> <span class="mf">148.5</span><span class="p">,</span> <span class="mf">216.4</span><span class="p">,</span> <span class="mf">194.1</span><span class="p">,</span> <span class="mf">95.6</span><span class="p">,</span> <span class="mf">54.4</span><span class="p">],</span>
+            <span class="na">tooltip</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">valueSuffix</span><span class="p">:</span> <span class="s1">' 台'</span>       <span class="c1">// 如果需要单独定义该条数据展示时 tooltip 内坐标时，可以设置此选项</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="na">name</span><span class="p">:</span> <span class="s1">'苹果'</span><span class="p">,</span>
+            <span class="na">yAxis</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="na">type</span><span class="p">:</span> <span class="s1">'stack-bar'</span><span class="p">,</span>
+            <span class="na">stack</span><span class="p">:</span> <span class="s1">'IOS'</span><span class="p">,</span>
+            <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="mf">217.0</span><span class="p">,</span> <span class="mf">316.9</span><span class="p">,</span> <span class="mf">419.5</span><span class="p">,</span> <span class="mf">714.5</span><span class="p">,</span> <span class="mf">218.2</span><span class="p">,</span> <span class="mf">321.5</span><span class="p">,</span> <span class="mf">1115.2</span><span class="p">,</span> <span class="mf">726.5</span><span class="p">,</span> <span class="mf">323.3</span><span class="p">,</span> <span class="mf">418.3</span><span class="p">,</span> <span class="mf">313.9</span><span class="p">,</span> <span class="mf">519.6</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="na">name</span><span class="p">:</span> <span class="s1">'小米'</span><span class="p">,</span>
+            <span class="na">yAxis</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="na">type</span><span class="p">:</span> <span class="s1">'stack-bar'</span><span class="p">,</span>
+            <span class="na">stack</span><span class="p">:</span> <span class="s1">'安卓'</span><span class="p">,</span>
+            <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="mf">27.0</span><span class="p">,</span> <span class="mf">36.9</span><span class="p">,</span> <span class="mf">41.5</span><span class="p">,</span> <span class="mf">74.5</span><span class="p">,</span> <span class="mf">18.2</span><span class="p">,</span> <span class="mf">32.5</span><span class="p">,</span> <span class="mf">115.2</span><span class="p">,</span> <span class="mf">422.5</span><span class="p">,</span> <span class="mf">123.3</span><span class="p">,</span> <span class="mf">818.3</span><span class="p">,</span> <span class="mf">130.9</span><span class="p">,</span> <span class="mf">19.6</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="na">legend</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">position</span><span class="p">:</span> <span class="s1">'top-right'</span>           <span class="c1">// 可选 legend 的展示位置：top-left/top-center/top-right</span>
+    <span class="p">},</span>
+    <span class="na">plotOptions</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">radar</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">dataLabels</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="na">showLabelNumber</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="na">color</span><span class="p">:</span> <span class="s1">'#000'</span><span class="p">,</span>
+                <span class="na">connectorColor</span><span class="p">:</span> <span class="s1">'#000'</span>
+            <span class="p">},</span>
+
+            <span class="na">showInLegend</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+
+            <span class="na">radius</span><span class="p">:</span> <span class="mi">180</span><span class="p">,</span>
+            <span class="na">margin</span><span class="p">:</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">110</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="na">pie</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">donut</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                <span class="c1">// 甜甜圈图还是普通饼图</span>
+            <span class="na">cursor</span><span class="p">:</span> <span class="s1">'pointer'</span><span class="p">,</span>          <span class="c1">// 鼠标交互时样式</span>
+            <span class="na">dataLabels</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>          <span class="c1">// 每个扇区是否展示文字</span>
+                <span class="na">showLabelNumber</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>     <span class="c1">// 由于某些数据长尾很多，该选项可控制只显示前多少个扇区的文字</span>
+                <span class="na">color</span><span class="p">:</span> <span class="s1">'#000'</span><span class="p">,</span>          <span class="c1">// 文字颜色</span>
+                <span class="na">connectorColor</span><span class="p">:</span> <span class="s1">'#000'</span>  <span class="c1">// 文字与扇区连线的颜色</span>
+            <span class="p">},</span>
+            <span class="na">animate</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>             <span class="c1">// 绘制时是否需要动画</span>
+            <span class="na">showInLegend</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>         <span class="c1">// 是否需要 legend</span>
+            <span class="na">margin</span><span class="p">:</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>    <span class="c1">// 画布 margin</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="na">radius</span><span class="p">:</span> <span class="p">[</span><span class="mi">130</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span>                  <span class="c1">// 设置半径饼图为 {Number}，甜甜圈图为 Array.&lt;Number&gt;</span>
+    <span class="na">canvasLayout</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">orign</span><span class="p">:</span> <span class="p">{</span><span class="na">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>            <span class="c1">// 坐标系原点指定</span>
+        <span class="na">margin</span><span class="p">:</span> <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span>       <span class="c1">// 上下左右的留白设置</span>
+        <span class="na">width</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                       <span class="c1">// 画布宽度</span>
+        <span class="na">height</span><span class="p">:</span> <span class="mi">0</span>                       <span class="c1">// 画布高度</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// 初始化图形</span>
+<span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nx">hmcharts</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">hmcharts</span><span class="p">.{{</span><span class="nx">prop</span><span class="p">}},</span> <span class="nx">settingData</span><span class="p">);</span>
+</code></pre>
 
 <aside class="notice">以下列举了所有可以自定义的 api 接口信息，使用时可以通过 setting 去覆盖已达到你所需要的样式</aside>
 
@@ -894,50 +1040,6 @@ TODO — 待补充全右侧全部接口极其相关注释
 <th>Meaning</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone &ndash; The kitten requested has been removed from our servers</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&rsquo;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
-</tr>
 </tbody></table>
 
       </div>

@@ -109,23 +109,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <p>% [百度统计] [详细设计] Holmes-332-百度统计池-上海站【20160418】
-% wumingdan
-% 2016-04-18</p>
-
-<script type="text/javascript">
-var ADoc_config = {
-    showDocTree : false,
-    showChangeLog: true,
-    showTOC : true
-};
-</script>
-
-<style type="text/css">
-body { font-family: Microsoft Yahei; }
-</style>
-
-<h2 id="component">[Component] 图标组件数据格式</h2>
+        <h2 id="component">[Component] 图标组件数据格式</h2>
 
 <p>### 添加代码库</p>
 
@@ -134,16 +118,59 @@ body { font-family: Microsoft Yahei; }
 
 <p>引入之后会产生一个全局变量<code class="prettyprint">hmcharts</code>，结构如下</p>
 
-<p>|* 名称 <em>|</em> 类型 <em>|</em> 说明 *|
-    |create | Function | 创建所有图像都通过此接口|
-    |bubble | Object | 气泡图|
-    |flow | Object | 上下游图|
-    |heatMap | Object | 点击图（待完善）|
-    |maps | Object | 地图合集，可选中国和世界 {china: Object, world: Object}|
-    |pie | Object | 饼图|
-    |radar | Object | 雷达图|
-    |series | Object | 线图/柱状图/面积图/上述3种任意混合图（待执行负轴）|
-    |stackBar | Object | 堆积图|</p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>create</td>
+<td>Function</td>
+<td>创建所有图像都通过此接口</td>
+</tr>
+<tr>
+<td>bubble</td>
+<td>Object</td>
+<td>气泡图</td>
+</tr>
+<tr>
+<td>flow</td>
+<td>Object</td>
+<td>上下游图</td>
+</tr>
+<tr>
+<td>heatMap</td>
+<td>Object</td>
+<td>点击图（待完善）</td>
+</tr>
+<tr>
+<td>maps</td>
+<td>Object</td>
+<td>地图合集，可选中国和世界 {china: Object, world: Object}</td>
+</tr>
+<tr>
+<td>pie</td>
+<td>Object</td>
+<td>饼图</td>
+</tr>
+<tr>
+<td>radar</td>
+<td>Object</td>
+<td>雷达图</td>
+</tr>
+<tr>
+<td>series</td>
+<td>Object</td>
+<td>线图/柱状图/面积图/上述3种任意混合图（待执行负轴）</td>
+</tr>
+<tr>
+<td>stackBar</td>
+<td>Object</td>
+<td>堆积图</td>
+</tr>
+</tbody></table>
 
 <p>### 折线图</p>
 
@@ -158,50 +185,6 @@ body { font-family: Microsoft Yahei; }
 <h2 id="story-1086">[Story 1086] 【统计改版】外部链接升级</h2>
 
 <h2 id="story-1101">[Story 1101] 【统计改版】推广概况页面</h2>
-
-<script type="text/javascript">
-var showToc = function(){
-    if(typeof ADoc === "undefined"){
-        setTimeout(showToc,100);
-    }
-    else
-    {
-        ADoc.TOC.show();
-    }
-}
-showToc();
-</script>
-
-<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
-
-<script type="text/javascript" src="js/scrollable.js"></script>
-
-<style>
-    /* go to top link */
-.goToTop
-{
-    background: url(http://a.xnimg.cn/imgpro/button/back-top.png) no-repeat 0 0;
-    bottom: 10px;
-    cursor: pointer;
-    display: none;
-    height: 50px;
-    position: fixed;
-    right: 10px;
-    width: 50px;
-    zoom: 1;
-    z-index: 999;
-    overflow: hidden;
-}
-
-.goToTop:hover
-{
-    background-position: -50px 0;
-}
-
-img{
-    box-shadow: 1px 1px 5px #666;
-}
-</style>
 
       </div>
       <div class="dark-box">
