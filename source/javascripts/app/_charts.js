@@ -316,5 +316,16 @@ $(document).ready(function () {
     
     // 雷达图
     initRadarChartDemo();
-
+    
+    
+    
+    
+    // 图片放大
+    $('img').click(function (e) {
+        var target = $(e.target);
+        
+        var src = target.attr('src');
+        
+        window.open(src);
+    });
 });
