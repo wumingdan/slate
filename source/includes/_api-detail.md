@@ -2,6 +2,49 @@
 
 ## CSS
 
+```css
+.hm-grid {
+    fill: #f00;
+    stroke-width: 2;
+}
+
+.hm-axis {
+}
+
+.hm-category-axis {
+}
+
+.hm-value-axis {
+}
+
+.hm-axis-labels {
+}
+
+.hm-category-axis-labels {
+}
+
+.hm-value-axis-labels {
+}
+
+.hm-serie {
+}
+
+.hm-serie-0,
+.hm-serie-1 {
+}
+
+.hm-series-area {
+}
+
+.hm-series-area-0,
+.hm-series-area-1 {
+}
+
+.hm-grid-mask {
+}
+
+```
+
 Line/bar/area chart classNames
 
 ClassName| Meaning
