@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Documentation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #505050;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #d0d0d0;
+}
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+.highlight .gi {
+  color: #90a959;
+}
+.highlight .gd {
+  color: #ac4142;
+}
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f;
+}
+.highlight .kc {
+  color: #d28445;
+}
+.highlight .kt {
+  color: #d28445;
+}
+.highlight .kd {
+  color: #d28445;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959;
+}
+.highlight .sr {
+  color: #75b5aa;
+}
+.highlight .si {
+  color: #8f5536;
+}
+.highlight .se {
+  color: #8f5536;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #6a9fb5;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #90a959;
+}
+.highlight .ss {
+  color: #90a959;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+    <link href="stylesheets/charts.css" rel="stylesheet" />
+      <script src="javascripts/all_nosearch.js"></script>
+  </head>
+
+  <body class="holmes-20160418" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" />
+        <div class="lang-selector">
+        </div>
+      <div id="toc">
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <p>% [百度统计] [详细设计] Holmes-332-百度统计池-上海站【20160418】
+% wumingdan
+% 2016-04-18</p>
+
+<script type="text/javascript">
+var ADoc_config = {
+    showDocTree : false,
+    showChangeLog: true,
+    showTOC : true
+};
+</script>
+
+<style type="text/css">
+body { font-family: Microsoft Yahei; }
+</style>
+
+<h2 id="component">[Component] 图标组件数据格式</h2>
+
+<p>### 添加代码库</p>
+
+<p>:::javascript
+    <script src="hmcharts.min.js"></script></p>
+
+<p>引入之后会产生一个全局变量<code class="prettyprint">hmcharts</code>，结构如下</p>
+
+<p>|* 名称 <em>|</em> 类型 <em>|</em> 说明 *|
+    |create | Function | 创建所有图像都通过此接口|
+    |bubble | Object | 气泡图|
+    |flow | Object | 上下游图|
+    |heatMap | Object | 点击图（待完善）|
+    |maps | Object | 地图合集，可选中国和世界 {china: Object, world: Object}|
+    |pie | Object | 饼图|
+    |radar | Object | 雷达图|
+    |series | Object | 线图/柱状图/面积图/上述3种任意混合图（待执行负轴）|
+    |stackBar | Object | 堆积图|</p>
+
+<p>### 折线图</p>
+
+<p>:::javascript</p>
+
+<h2 id="component">[Component]</h2>
+
+<h2 id="story-1089-amp">[Story 1089] 【统计改版】搜索推广&amp;网盟推广升级</h2>
+
+<h2 id="story-1084">[Story 1084] 【统计改版】全部来源升级</h2>
+
+<h2 id="story-1086">[Story 1086] 【统计改版】外部链接升级</h2>
+
+<h2 id="story-1101">[Story 1101] 【统计改版】推广概况页面</h2>
+
+<script type="text/javascript">
+var showToc = function(){
+    if(typeof ADoc === "undefined"){
+        setTimeout(showToc,100);
+    }
+    else
+    {
+        ADoc.TOC.show();
+    }
+}
+showToc();
+</script>
+
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+
+<script type="text/javascript" src="js/scrollable.js"></script>
+
+<style>
+    /* go to top link */
+.goToTop
+{
+    background: url(http://a.xnimg.cn/imgpro/button/back-top.png) no-repeat 0 0;
+    bottom: 10px;
+    cursor: pointer;
+    display: none;
+    height: 50px;
+    position: fixed;
+    right: 10px;
+    width: 50px;
+    zoom: 1;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.goToTop:hover
+{
+    background-position: -50px 0;
+}
+
+img{
+    box-shadow: 1px 1px 5px #666;
+}
+</style>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
