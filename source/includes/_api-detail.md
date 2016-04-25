@@ -62,6 +62,8 @@ hm-series-area | 面积图面积部分的单独样式
 hm-series-area-{number} | 同样 number 对应数据传入的顺序，可单独定义某个面积展现的样式
 hm-grid-mask | 整体图形覆盖层，用于事件监听，默认无样式，也不建议修改其样式
 
+<img src="images/svg.png" />
+
 ## Settings
 
 ```javascript
