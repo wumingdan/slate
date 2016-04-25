@@ -818,11 +818,75 @@ TODO — 待补充全右侧全部接口极其相关注释
 
 <h2 id="maps">Maps</h2>
 
-          <h1 id="errors">Errors</h1>
+          <h1 id="chart-styles">Chart Styles</h1>
 
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
+<h2 id="css">CSS</h2>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>Line/bar/area chart classNames</p>
+
+<table><thead>
+<tr>
+<th>ClassName</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>hm-grid</td>
+<td>图形网格，可以自定义网格线条颜色等</td>
+</tr>
+<tr>
+<td>hm-axis</td>
+<td>可以自定义 axis 轴（包括所有横轴，所有纵轴，所有极坐标轴）相关样式</td>
+</tr>
+<tr>
+<td>hm-category-axis</td>
+<td>类目轴（横向图形中的横轴）</td>
+</tr>
+<tr>
+<td>hm-value-axis</td>
+<td>数值轴（横向图形中的纵轴）</td>
+</tr>
+<tr>
+<td>hm-axis-labels</td>
+<td>可自定义坐标轴文字的样式</td>
+</tr>
+<tr>
+<td>hm-category-axis-labels</td>
+<td>类目坐标轴样式</td>
+</tr>
+<tr>
+<td>hm-value-axis-labels</td>
+<td>数值坐标轴样式</td>
+</tr>
+<tr>
+<td>hm-serie</td>
+<td>数据展现的线条或者柱</td>
+</tr>
+<tr>
+<td>hm-serie-{number}</td>
+<td>number对应数据传入时的顺序，可单独定义某条数据展示线的样式</td>
+</tr>
+<tr>
+<td>hm-series-are</td>
+<td>面积图面积部分的单独样式</td>
+</tr>
+<tr>
+<td>hm-series-are-{number}</td>
+<td>同样 number 对应数据传入的顺序，可单独定义某个面积展现的样式</td>
+</tr>
+<tr>
+<td>hm-grid-mask</td>
+<td>整体图形覆盖层，用于事件监听，默认无样式，也不建议修改其样式</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+<h2 id="settings">Settings</h2>
+
+<aside class="notice">以下列举了所有可以自定义的 api 接口信息，使用时可以通过 setting 去覆盖已达到你所需要的样式</aside>
 
 <table><thead>
 <tr>
