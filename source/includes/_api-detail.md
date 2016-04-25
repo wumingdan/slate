@@ -218,8 +218,7 @@ var settingData = {
 var chart = hmcharts.create(hmcharts.{{prop}}, settingData);
 ```
 
-<aside class="notice">以下列举了所有可以自定义的 api 接口信息，使用时可以通过 setting 去覆盖已达到你所需要的样式</aside>
+<aside class="notice">右侧列举了所有可以自定义的 api 接口信息，使用时可以通过 setting 去覆盖已达到你所需要的样式</aside>
 
-Error Code | Meaning
----------- | -------
+见右侧示例`javascript`代码→→→→→
 
