@@ -11,6 +11,7 @@ toc_footers:
 
 includes:
   - api-detail
+  - code
 
 search: true
 ---
