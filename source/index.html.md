@@ -18,7 +18,7 @@ search: true
 
 # Introduction
 
-hm-charts，[source](https://github.com/wumingdan/hm-charts)，[demo](http://q.hm.baidu.com/tmp/hm-charts/doc/example/demo/)
+hm-charts，[Source](https://github.com/wumingdan/hm-charts)，[Demo](http://q.hm.baidu.com/tmp/hm-charts/doc/example/demo/)
 
 兼容所有高级浏览器，以及 IE6+，如有发现兼容性问题随时联系 [wumingdan](baidu://message/?id=wumingdan2011) 修复。
 
